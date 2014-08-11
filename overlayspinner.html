@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<script src="https://cdn.jsdelivr.net/jquery/2.1.1/jquery.min.js"></script>
+	<script src="jquery.overlayspinner.js"></script>
+	<style>
+		.container{padding:50px;border:2px solid blue;border-radius:10px;background-color:green;margin-top:10px;}
+	</style>
+</head>
+<body>
+	<div class="container">
+		This is some text inside a container. Will overlay in 1 second for 1 second only.
+	</div>
+	<script>
+		$(function(){
+			setTimeout(function(){
+				$('.container').overlayspinner();
+			},1000);
+			
+			setTimeout(function(){
+				$('.container').overlayspinner('stop');
+			},2000);
+		});
+	</script>
+</body>
+</html>
