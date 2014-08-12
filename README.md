@@ -9,7 +9,12 @@ Simply add the data-overlayspinner="" attribute to your <asp:UpdatePanel> contro
 <asp:UpdatePanel runat="server" data-overlayspinner="">
 `
 
-Demo:
+### Screenshots
+![Screenshot](http://i61.tinypic.com/fbequq.png)
+![Screenshot](http://i62.tinypic.com/2hya0yc.png)
+
+### Demo
 https://rawgit.com/simon-thorpe/jquery.overlayspinner/master/example.html
 
+### Credits
 Thanks to Felix Gnass's project https://github.com/fgnass/spin.js for the actual spin code.
