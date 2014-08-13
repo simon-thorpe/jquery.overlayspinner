@@ -9,6 +9,7 @@
 </script>
 <html>
 <head runat="server">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title></title>
     <script src="https://cdn.jsdelivr.net/jquery/1.11.1/jquery.min.js"></script>
     <!--[if lte IE 8]><script>[].map||(Array.prototype.map=function(a){for(var b=this,c=b.length,d=[],e=0,f;e<b;)d[e]=e in b?a.call(arguments[1],b[e],e++,b):f;return d})</script><![endif]-->
