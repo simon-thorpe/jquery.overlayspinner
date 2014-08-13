@@ -5,8 +5,6 @@
  */
 (function($){
 	$.fn.overlayspinner=function(o){
-		var isIE8=navigator.userAgent.indexOf('(compatible; MSIE 8.0;')!==-1;
-		
 		if(typeof(o)==='string'){
 			if(o==='stop'){
 				return this.trigger('overlayspinner-stop');
@@ -40,8 +38,7 @@
 			var spinner=new OverlaySpinner();
 			
 			trigger.bind('overlayspinner-start',function(){
-				if(!isIE8)
-					spinner.spin($(this).css(overlayDarkProp,overlayDarkVal).get(0));
+				spinner.spin($(this).css(overlayDarkProp,overlayDarkVal).get(0));
 				return true;
 			});
 			
