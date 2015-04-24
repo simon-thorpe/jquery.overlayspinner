@@ -1,7 +1,7 @@
 /**
- * Copyright (c) 2014 Simon Thorpe
  * Licensed under the MIT license
  * Uses MIT licensed code from Felix Gnass - https://github.com/fgnass/spin.js
+ * jQuery.overlayspinner plugin by Simon Thorpe
  */
 (function($){
 	$.fn.overlayspinner=function(o){
@@ -59,7 +59,7 @@ jQuery(function(){
 			for(var panelIndex in panels){
 				var panel=jQuery(panels[panelIndex]);
 				if(typeof(panel.attr('data-overlayspinner'))!=='undefined')
-				    panel.overlayspinner();
+				    panel.overlayspinner({theme:panel.attr('data-overlayspinner')});
 			}
 		});
 		Sys.WebForms.PageRequestManager.getInstance().add_endRequest(function (a, b){
