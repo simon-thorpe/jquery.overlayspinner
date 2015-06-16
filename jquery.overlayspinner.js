@@ -15,6 +15,7 @@
 		o=jQuery.extend({
 			theme:'light' // 'light' or 'dark'
 			,stop:false
+			,modal:true
 		},o);
 		
 		var overlayDarkProp='opacity';
@@ -28,16 +29,20 @@
 		
 		$(this).bind('overlayspinner-stop',function(){
 			$(this).css(overlayDarkProp,overlayDarkValRet);
+			$('.overlayspinner-modal').remove();
 			
 			// Normally removing the spinner like this isn't needed. But called from ASP.NET Sys.WebForms.PageRequestManager.getInstance().add_endRequest then there was no saved reference to the spinner object.
 			$(this).find('.OverlaySpinner').remove();
 		});
 		
 		return this.each(function(){
-			var trigger=$(this);
+			var form=$(this);
 			var spinner=new OverlaySpinner();
-			
-			trigger.bind('overlayspinner-start',function(){
+			form.bind('overlayspinner-start',function(){
+				if(o.modal){
+					var modal=$('<div/>').addClass('overlayspinner-modal').css({position:'fixed',zIndex:10000,top:0,right:0,bottom:0,left:0,opacity:0});
+					$(document.body).append(modal);
+				}
 				spinner.spin($(this).css(overlayDarkProp,overlayDarkVal).get(0));
 				return true;
 			});
