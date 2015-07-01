@@ -40,8 +40,20 @@
 			var spinner=new OverlaySpinner();
 			form.bind('overlayspinner-start',function(){
 				if(o.modal){
-					var modal=$('<div/>').addClass('overlayspinner-modal').css({position:'fixed',zIndex:10000,top:0,right:0,bottom:0,left:0,opacity:0});
-					$(document.body).append(modal);
+					//var modal=$('<div/>').addClass('overlayspinner-modal').css({position:'fixed',zIndex:10000,top:0,right:0,bottom:0,left:0,opacity:0});
+					//$(document.body).append(modal);
+					
+					var modal=jQuery('<div/>').addClass('overlayspinner-modal').css({
+						zIndex:10000,
+						backgroundColor:'black',
+						position:'absolute',
+						opacity:.1,
+						marginLeft:'-'+form.css('padding-left'),
+						marginTop:'-'+form.css('padding-top'),
+						width:form.width()+parseInt(form.css('padding-left'))+parseInt(form.css('padding-right')),
+						height:form.height()+parseInt(form.css('padding-top'))+parseInt(form.css('padding-bottom'))
+					});
+					form.prepend(modal);
 				}
 				spinner.spin($(this).css(overlayDarkProp,overlayDarkVal).get(0));
 				return true;
